@@ -16,7 +16,8 @@ class Song
 
     @genre = genre
     @@genres << genre
-    @@genre_count[genre] = (@@genre_count[genre] ? @@genre_count[genre] + 1 : 1)
+    @@genre_count[genre] ||= 0
+    @@genre_count[genre] += 1
   end
 
   def self.count
